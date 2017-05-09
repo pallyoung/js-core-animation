@@ -1,11 +1,16 @@
 {
   "name": "js-core-animation",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "js animation core framework",
   "main": "index.js",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.1.2"
+  },
   "scripts": {
+    "release": "gulp release",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
