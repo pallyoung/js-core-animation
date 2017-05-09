@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test</title>
+    <script src='./../src/index.js'></script>
+    <style>
+        .box {
+            height:80px;
+            width:80px;
+            background:#4033a4;
+            margin:5px 0;
+            text-align: center;
+            line-height: 80px;
+            position: absolute
+        }
+    </style>
+</head>
+
+<body>
+    <p> <input type="button" value="start" onclick="startAnimaton()"></p>
+
+    <div style = 'width:80%;position:relative'>
+        <p class = 'box'>timing</p>
+        <p class = 'box'>ease</p>
+        <p class = 'box'>easeIn</p>
+        <p class = 'box'>easeInOut</p>
+        <p class = 'box'>easeOut</p>
+        <p class = 'box'>linear</p>
+    </div>
+    <script>
+         var boxs = document.getElementsByClassName('box');
+         for(var i = 0,l= boxs.length;i<l;i++){
+             boxs[i].style.top = i*90+10+'px';
+         }
+         var timing = CoreAnimation.timing({
+             duration:2000,
+             onProgress:function(progress){
+                boxs[0].style.left = progress*100+'%';
+             },
+             onEnd:function(){
+                 CoreAnimation.timing({
+                     duration:2000,
+                     onProgress:function(progress){
+                        boxs[0].style.left =(1- progress)*100+'%';
+                    },
+                 }).start();
+             }
+         });
+         var ease = CoreAnimation.ease({
+             duration:2000,
+             onProgress:function(progress){
+                boxs[1].style.left = progress*100+'%';
+             },
+             onEnd:function(){
+                 CoreAnimation.ease({
+                     duration:2000,
+                     onProgress:function(progress){
+                        boxs[1].style.left =(1- progress)*100+'%';
+                    },
+                 }).start();
+             }
+         });
+         var easeIn= CoreAnimation.easeIn({
+             duration:2000,
+             onProgress:function(progress){
+                boxs[2].style.left = progress*100+'%';
+             },
+             onEnd:function(){
+                 CoreAnimation.easeIn({
+                     duration:2000,
+                     onProgress:function(progress){
+                        boxs[2].style.left =(1- progress)*100+'%';
+                    },
+                 }).start();
+             }
+         });
+         var easeInOut= CoreAnimation.easeInOut({
+             duration:2000,
+             onProgress:function(progress){
+                boxs[3].style.left = progress*100+'%';
+             },
+             onEnd:function(){
+                 CoreAnimation.easeInOut({
+                     duration:2000,
+                     onProgress:function(progress){
+                        boxs[3].style.left =(1- progress)*100+'%';
+                    },
+                 }).start();
+             }
+         });
+         var easeOut= CoreAnimation.easeOut({
+             duration:2000,
+             onProgress:function(progress){
+                boxs[4].style.left = progress*100+'%';
+             },
+             onEnd:function(){
+                 CoreAnimation.easeOut({
+                     duration:2000,
+                     onProgress:function(progress){
+                        boxs[4].style.left =(1- progress)*100+'%';
+                    },
+                 }).start();
+             }
+         });
+         var linear= CoreAnimation.linear({
+             duration:2000,
+             onProgress:function(progress){
+                boxs[5].style.left = progress*100+'%';
+             },
+             onEnd:function(){
+                 CoreAnimation.linear({
+                     duration:2000,
+                     onProgress:function(progress){
+                        boxs[5].style.left =(1- progress)*100+'%';
+                    },
+                 }).start();
+             }
+         });
+         function startAnimaton(){
+             timing.start();
+             ease.start();
+             easeIn.start();
+             easeInOut.start();
+             easeOut.start();
+             linear.start();
+         }
+    </script>
+</body>
+
+</html>

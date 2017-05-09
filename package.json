@@ -1,0 +1,24 @@
+{
+  "name": "js-core-animation",
+  "version": "0.0.1",
+  "description": "js animation core framework",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pallyoung/js-core-animation.git"
+  },
+  "keywords": [
+    "js"
+  ],
+  "author": "Spencer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pallyoung/js-core-animation/issues"
+  },
+  "homepage": "https://github.com/pallyoung/js-core-animation#readme"
+}
